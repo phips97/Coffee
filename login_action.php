@@ -30,7 +30,7 @@
     $_db_datenbank = "kaffeeapp"; 
     $_db_username = "root"; 
     //PP: Wichtig: Hier das Passwort des jeweiligen Servers einfuegen
-    $_db_passwort = "Passwort"; 
+    $_db_passwort = "PASSWORT"; 
     # Datenbankverbindung herstellen 
     $link = mysqli_connect($_db_host, $_db_username, $_db_passwort, $_db_datenbank);
     
@@ -43,14 +43,12 @@
     $result = mysqli_query($link, $_sql);
     $anzahl = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
-    $guthaben = $row[guthaben_cent];
-    $euro = $guthaben / 100;
     //Wenn ein Datensatz gefunden wurde
     if ($anzahl > 0)
     {
     echo "<br>Hallo ". "$row[vorname] " . "$row[nachname]</br>";
     echo "<br>Guthaben: ";
-    echo "$euro";
+    echo "$row[guthaben_cent]" . " Cent</br>";
     
     echo "<br><select>";
     
@@ -58,11 +56,13 @@
     $result = mysqli_query($link, $sqldropdown);
     while($rowdropdown = mysqli_fetch_assoc($result)) 
     {
-    	echo "<option>" . $rowdropdown['name'] . ", Preis: ".  $rowdropdown['preis_cent'] ."</option>";
+    	echo "<option>" . $rowdropdown['name'] . ", Preis: ".  $rowdropdown['preis_cent']. " Cent" ."</option>";
     }
-echo "</select>"; 
+	echo "</select></br>"; 
+	//Buttons
 	echo "<br><button type='button' id ='trinken'><i class='fa fa-coffee'></i> Kaffee trinken</button>";
 	echo "<button type='button' id='auffuellen'><i class='fa fa-money'></i> Guthaben auff&uuml;llen</button>";
+	echo "<button type='button' id='statistik'><i class='fa fa-bar-chart'></i> Statistik</button></br>";
     }
     //Falls kein passender Datensatz gefunden wurde
     else 
