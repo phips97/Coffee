@@ -30,7 +30,7 @@
     $_db_datenbank = "kaffeeapp"; 
     $_db_username = "root"; 
     //PP: Wichtig: Hier das Passwort des jeweiligen Servers einfuegen
-    $_db_passwort = "PASSWORT"; 
+    $_db_passwort = "Passwort"; 
     # Datenbankverbindung herstellen 
     $link = mysqli_connect($_db_host, $_db_username, $_db_passwort, $_db_datenbank);
     
@@ -44,7 +44,7 @@
     $anzahl = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
     //Wenn ein Datensatz gefunden wurde
-    if ($anzahl > 0)
+    if ($anzahl > 0 && $_email != 'admin')
     {
     echo "<br>Hallo ". "$row[vorname] " . "$row[nachname]</br>";
     echo "<br>Guthaben: ";
@@ -64,6 +64,12 @@
 	echo "<button type='button' id='auffuellen'><i class='fa fa-money'></i> Guthaben auff&uuml;llen</button>";
 	echo "<button type='button' id='statistik'><i class='fa fa-bar-chart'></i> Statistik</button></br>";
     }
+    //Admin Case
+    elseif ($_email == 'admin' && $anzahl > 0)
+    {
+    	header('Location:admin.php');
+    }
+    
     //Falls kein passender Datensatz gefunden wurde
     else 
     {
