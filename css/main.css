@@ -1,0 +1,52 @@
+html{
+    background: url(/coffee/img/kaffeebohnen.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: list-item;
+}
+body{
+    background: url(/coffee/img/kaffeebohnen.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url('/coffee/img/kaffeebohnen.jpg');   
+}
+.container{
+    position: relative;
+    top: 150px;
+    color: #ffffff;
+    border:2px solid #ffffff;
+   /* background-color: #c68c53;*/
+    background-color: rgba(97, 61, 49, 0.7);
+    font-size: 20px;
+    width: 100%;
+    max-width: 750px;
+}
+.text-center {
+    margin-bottom: 25px;
+}
+.begruessung{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+select,
+.button{
+    color: #ffffff;
+    background-color: #604020;
+    border-radius: 0px;
+    padding:15px;
+    border: none;
+    font-size: 20px;
+}
+.button{
+    border:1px solid #ffffff;
+    margin: 5px;
+    border-radius: 5px;
+}
+.button:hover{
+    border:1px solid #c68c53;
+/*    border:1px solid #613d31;*/
+}
