@@ -6,13 +6,14 @@
 <!-- Benötigte Meta Tags -->
 <meta charset="utf-8">
 <meta name="author" content="">
-<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/coffee/img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="ie-edge">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
 <!-- Schriften -->
 <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -27,10 +28,10 @@
 <div class="heading text-center">
 <?php 
     $_db_host = "localhost";
-    $_db_datenbank = "kaffeeapp"; 
+    $_db_datenbank = "coffee"; 
     $_db_username = "root"; 
     //PP: Wichtig: Hier das Passwort des jeweiligen Servers einfuegen
-    $_db_passwort = "Passwort"; 
+    $_db_passwort = "passwort"; 
     # Datenbankverbindung herstellen 
     $link = mysqli_connect($_db_host, $_db_username, $_db_passwort, $_db_datenbank);
     
@@ -46,8 +47,8 @@
     //Wenn ein Datensatz gefunden wurde
     if ($anzahl > 0 && $_email != 'admin')
     {
-    echo "<br>Hallo ". "$row[vorname] " . "$row[nachname]</br>";
-    echo "<br>Guthaben: ";
+    echo "<br><p class='begruessung'>Hallo ". "$row[vorname] " . "$row[nachname]</p>";
+    echo "Guthaben: ";
     echo "$row[guthaben_cent]" . " Cent</br>";
     
     echo "<br><select>";
@@ -60,9 +61,9 @@
     }
 	echo "</select></br>"; 
 	//Buttons
-	echo "<br><button type='button' id ='trinken'><i class='fa fa-coffee'></i> Kaffee trinken</button>";
-	echo "<button type='button' id='auffuellen'><i class='fa fa-money'></i> Guthaben auff&uuml;llen</button>";
-	echo "<button type='button' id='statistik'><i class='fa fa-bar-chart'></i> Statistik</button></br>";
+	echo "<br><button type='button' id ='trinken' class='button'><i class='fa fa-coffee'></i> Kaffee trinken</button>";
+	echo "<button type='button' id='auffuellen' class='button'><i class='fa fa-money'></i> Guthaben auff&uuml;llen</button>";
+	echo "<button type='button' id='statistik' class='button'><i class='fa fa-bar-chart'></i> Statistik</button></br>";
     }
     //Admin Case
     elseif ($_email == 'admin' && $anzahl > 0)

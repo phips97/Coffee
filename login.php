@@ -1,19 +1,18 @@
 <link rel="stylesheet" href="css/login.css">
 <!-- EINBINDUNG FAVICON -->
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/coffee/img/favicon.ico">
 
 <form method="POST" action="login_action.php">
     
-  <div class="imgcontainer">
-    <img src="img/img_avatar2_test.png" alt="Avatar" class="avatar">
-  </div>
+  
 
   <div class="container">
-      <p><label><b>Mailadresse</b></label></p>
+      <img src="img/tasse.png" alt="Avatar" class="avatar">
+      <p><label>Mailadresse</label></p>
       <!--Autokomplettierung abgeschalten-->
       <p><input type="text" autocomplete="off" placeholder="Mailadresse eingeben" name="email" required></p>
 
-      <p><label><b>Passwort</b></label></p>
+      <p><label>Passwort</label></p>
       <p><input type="password" placeholder="Passwort eingeben" name="psw" required></p>
 
       <p><button type="submit">Login</button></p>
